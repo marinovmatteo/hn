@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hava Nagila AAA</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <img src="https://media0.giphy.com/media/v1.Y2lkPTZjMDliOTUydGNkamY4cnY5ejJwNmRzd3lxYTEzZjZyMzUzeXF0djdhdzB2NzEzdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/sUESEgyN7FmBG/giphy.gif" alt="Dance Meme GIF">
+  
+  <audio id="music" autoplay loop>
+    <source src="hava-nagila-bass-boost.mp3" type="audio/mpeg">
+    Your browser does not support the audio element, now cry.
+  </audio>
+
+  <script>
+    const audio = document.getElementById('music');
+    const playPromise = audio.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        document.body.addEventListener('click', () => audio.play(), {once: true});
+      });
+    }
+  </script>
+</body>
+</html>
